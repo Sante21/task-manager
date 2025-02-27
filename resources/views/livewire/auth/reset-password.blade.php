@@ -90,24 +90,24 @@ new #[Layout('components.layouts.auth')] class extends Component {
         <flux:input
             wire:model="password"
             id="password"
-            label="{{ __('Password') }}"
+            label="{{ __('Contraseña') }}"
             type="password"
             name="password"
             required
             autocomplete="new-password"
-            placeholder="Password"
+            placeholder="Contraseña"
         />
 
         <!-- Confirm Password -->
         <flux:input
             wire:model="password_confirmation"
             id="password_confirmation"
-            label="{{ __('Confirm password') }}"
+            label="{{ __('Confirma la contraseña') }}"
             type="password"
             name="password_confirmation"
             required
             autocomplete="new-password"
-            placeholder="Confirm password"
+            placeholder="Confirma la contraseña"
         />
 
         <div class="flex items-center justify-end">

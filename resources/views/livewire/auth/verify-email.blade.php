@@ -55,7 +55,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
             type="submit"
             class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
         >
-            {{ __('Log out') }}
+            {{ __('Cerrar sessión') }}
         </button>
     </div>
 </div>

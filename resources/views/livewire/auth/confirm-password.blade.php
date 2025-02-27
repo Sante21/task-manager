@@ -46,14 +46,14 @@ new #[Layout('components.layouts.auth')] class extends Component {
         <flux:input
             wire:model="password"
             id="password"
-            label="{{ __('Password') }}"
+            label="{{ __('Contraseña') }}"
             type="password"
             name="password"
             required
             autocomplete="new-password"
-            placeholder="Password"
+            placeholder="Contraseña"
         />
 
-        <flux:button variant="primary" type="submit" class="w-full">{{ __('Confirm') }}</flux:button>
+        <flux:button variant="primary" type="submit" class="w-full">{{ __('Confirma') }}</flux:button>
     </form>
 </div>
