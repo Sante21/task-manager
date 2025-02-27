@@ -16,6 +16,7 @@ class Tarea extends Model
         'description',
         'priority',
         'tag',
+        'client_id',
         'limit_date'
     ];
 
