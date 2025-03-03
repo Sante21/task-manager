@@ -99,7 +99,7 @@
             <flux:navlist variant="outline">
                 <flux:navlist.group heading="Platform">
                     <flux:navlist.item icon="layout-grid" href="{{ route('dashboard') }}" :current="request()->routeIs('dashboard')" wire:navigate>
-                    {{ __('Dashboard') }}
+                    {{ __('Panel de control') }}
                     </flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
@@ -108,11 +108,11 @@
 
             <flux:navlist variant="outline">
                 <flux:navlist.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit" target="_blank">
-                {{ __('Repository') }}
+                {{ __('Repositorio') }}
                 </flux:navlist.item>
 
                 <flux:navlist.item icon="book-open-text" href="https://laravel.com/docs/starter-kits" target="_blank">
-                {{ __('Documentation') }}
+                {{ __('Documentación') }}
                 </flux:navlist.item>
             </flux:navlist>
         </flux:sidebar>
