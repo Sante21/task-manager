@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->enum('priority', ['baja', 'media', 'alta'])->default('media');
             $table->enum('tag', ['web', 'redes', 'newsletter'])->default('redes');
+            $table->enum('status', ['Sin empezar', 'Pausa', 'En progreso', 'Listo'])->default('Sin empezar');
             // $table->foreignId('client_id')->nullable()->constrained('clientes')->nullOnDelete();
             $table->date('limit_date')->nullable();
 

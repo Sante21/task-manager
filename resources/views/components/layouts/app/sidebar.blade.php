@@ -12,19 +12,26 @@
             </a>
 
             <flux:navlist variant="outline">
-                <flux:navlist.group heading="Platform" class="grid">
+                <flux:navlist.group heading="Inicio" class="grid">
                     <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Panel de control') }}</flux:navlist.item>
+                </flux:navlist.group>
+                
+                <flux:navlist.group heading="Espacio de trabajo" class="grid mt-5">
+                    <flux:navlist.item icon="user-group" :href="route('clientes.index')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Clientes') }}</flux:navlist.item>
+                    <flux:navlist.item icon="currency-dollar" :href="route('tareas.index')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Tareas') }}</flux:navlist.item>
+                    <flux:navlist.item icon="puzzle-piece" :href="route('clientes.index')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Responsables') }}</flux:navlist.item>
+                    <flux:navlist.item icon="user" :href="route('clientes.index')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Uusarios') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 
             <flux:spacer />
 
             <flux:navlist variant="outline">
-                <flux:navlist.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit" target="_blank">
-                {{ __('Repository') }}
+                <flux:navlist.item icon="folder-git-2" href="https://github.com/Sante21/mediaHub" target="_blank">
+                {{ __('Repositorio') }}
                 </flux:navlist.item>
 
-                <flux:navlist.item icon="book-open-text" href="https://laravel.com/docs/starter-kits" target="_blank">
+                <flux:navlist.item icon="book-open-text" href="https://github.com/Sante21/mediaHub/blob/main/README.md" target="_blank">
                 {{ __('Documentación') }}
                 </flux:navlist.item>
             </flux:navlist>
