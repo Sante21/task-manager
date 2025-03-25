@@ -28,7 +28,7 @@ Task Manager es una aplicación web desarrollada en **Laravel + Livewire + Eloqu
 ## 🔧 Instalación y configuración
 ### 1️⃣ Clonar el repositorio
 ```sh
-https://github.com/Sante21/task-manager.git
+git clone https://github.com/Sante21/task-manager.git
 cd task-manager
 ```
 
