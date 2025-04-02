@@ -13,7 +13,8 @@ class ResponsableController extends Controller
      */
     public function index()
     {
-        //
+        $responsables = Responsable::all();
+        return view('responsables', compact('responsables'));
     }
 
     /**

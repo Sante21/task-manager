@@ -1,7 +1,6 @@
 <tr class="hover:bg-slate-50 dark:hover:bg-neutral-900">
     <td class="p-4 border-b border-slate-200 py-5">
-        <img src="https://demos.creative-tim.com/corporate-ui-dashboard-pro/assets/img/michael-oxendine-GHCVUtBECuY-unsplash.jpg"
-            alt="Product 3" class="w-16 h-16 object-cover rounded" />
+        <img src="{{ asset('images/favicons/Favicon ' . $name . '.png') }}" alt="" class="w-13 h-13 object-cover rounded"/>
     </td>
     <td class="p-4 border-b border-slate-200 py-5">
         <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">{{$name}}</p>
