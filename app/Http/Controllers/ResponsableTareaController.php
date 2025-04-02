@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TareaResponsable;
-use App\Http\Requests\StoreTareaResponsableRequest;
-use App\Http\Requests\UpdateTareaResponsableRequest;
+use App\Models\ResponsableTarea;
+use App\Http\Requests\StoreResponsableTareaRequest;
+use App\Http\Requests\UpdateResponsableTareaRequest;
 
-class TareaResponsableController extends Controller
+class ResponsableTareaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class TareaResponsableController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTareaResponsableRequest $request)
+    public function store(StoreResponsableTareaRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class TareaResponsableController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TareaResponsable $tareaResponsable)
+    public function show(ResponsableTarea $responsableTarea)
     {
         //
     }
@@ -43,7 +43,7 @@ class TareaResponsableController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TareaResponsable $tareaResponsable)
+    public function edit(ResponsableTarea $responsableTarea)
     {
         //
     }
@@ -51,7 +51,7 @@ class TareaResponsableController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTareaResponsableRequest $request, TareaResponsable $tareaResponsable)
+    public function update(UpdateResponsableTareaRequest $request, ResponsableTarea $responsableTarea)
     {
         //
     }
@@ -59,7 +59,7 @@ class TareaResponsableController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TareaResponsable $tareaResponsable)
+    public function destroy(ResponsableTarea $responsableTarea)
     {
         //
     }

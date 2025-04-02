@@ -12,7 +12,9 @@ class Responsable extends Model
 
     // Propiedades, en este caso, user_id hará referencia a la Id del User.
     protected $fillable = [
-        'user_id'
+        'name',
+        'cargo',
+        'user_id',
     ];
 
     /*
@@ -26,6 +28,6 @@ class Responsable extends Model
     
     // Relación con Tareas N-N, con tabla pivote
     public function tareas() {
-        return $this->belongsToMany(Tarea::class, 'tarea_responsables');
+        return $this->belongsToMany(Tarea::class);
     }
 }

@@ -13,6 +13,6 @@ class TareaSeeder extends Seeder
      */
     public function run(): void
     {
-        Tarea::factory()->count(20)->create();
+        Tarea::factory()->count(10)->create();
     }
 }

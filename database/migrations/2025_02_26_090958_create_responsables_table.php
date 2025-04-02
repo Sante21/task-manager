@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('responsables', function (Blueprint $table) {
             $table->id();
 
+            $table->string('name');
+            $table->enum('cargo', ['Marketing', 'Web'])->default('Marketing');
+
             $table->foreignId('user_id')->unique()->constrained('users')->onDelete('cascade');
             
             $table->timestamps();

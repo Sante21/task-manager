@@ -27,11 +27,11 @@ class Tarea extends Model
 
     // Relacion con Responsables N-N con tabla pivote
     public function responsables() {
-        return $this->belongsToMany(Responsable::class, 'tarea_responsables');
+        return $this->belongsToMany(Responsable::class);
     }
     
     // Relacion con Clientes N-N con tabla pivote
     public function clientes() {
-        return $this->belongsToMany(Cliente::class, 'tarea_clientes');
+        return $this->belongsToMany(Cliente::class);
     }
 }

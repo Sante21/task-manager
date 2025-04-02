@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TareaCliente;
-use App\Http\Requests\StoreTareaClienteRequest;
-use App\Http\Requests\UpdateTareaClienteRequest;
+use App\Models\ClienteTarea;
+use App\Http\Requests\StoreClienteTareaRequest;
+use App\Http\Requests\UpdateClienteTareaRequest;
 
-class TareaClienteController extends Controller
+class ClienteTareaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class TareaClienteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTareaClienteRequest $request)
+    public function store(StoreClienteTareaRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class TareaClienteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TareaCliente $tareaCliente)
+    public function show(ClienteTarea $clienteTarea)
     {
         //
     }
@@ -43,7 +43,7 @@ class TareaClienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TareaCliente $tareaCliente)
+    public function edit(ClienteTarea $clienteTarea)
     {
         //
     }
@@ -51,7 +51,7 @@ class TareaClienteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTareaClienteRequest $request, TareaCliente $tareaCliente)
+    public function update(UpdateClienteTareaRequest $request, ClienteTarea $clienteTarea)
     {
         //
     }
@@ -59,7 +59,7 @@ class TareaClienteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TareaCliente $tareaCliente)
+    public function destroy(ClienteTarea $clienteTarea)
     {
         //
     }

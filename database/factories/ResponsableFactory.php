@@ -22,6 +22,8 @@ class ResponsableFactory extends Factory
     public function definition(): array
     {
         return [
+            'name' => $this->faker->name(),
+            'cargo' => $this->faker->randomElement(['Marketing', 'Web']),
             'user_id' => User::factory(),
         ];
     }

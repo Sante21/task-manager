@@ -19,7 +19,7 @@ class Cliente extends Model
 
     // Relación con Tarea N-N, tienendo un modelo pivote
     public function tareas() {
-        return $this->belongsToMany(Tarea::class, 'tarea_clientes');
+        return $this->belongsToMany(Tarea::class);
     }
     
 }

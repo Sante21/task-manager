@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TareaCliente extends Model
+class ResponsableTarea extends Model
 {
-    /** @use HasFactory<\Database\Factories\TareaClienteFactory> */
+    /** @use HasFactory<\Database\Factories\ResponsableTareaFactory> */
     use HasFactory;
 
     // Definimos el modelo
-    protected $table = 'tarea_clientes';
+    protected $table = 'responsable_tarea';
 }

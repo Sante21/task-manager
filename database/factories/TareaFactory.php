@@ -25,6 +25,7 @@ class TareaFactory extends Factory
             'description' => $this->faker->paragraph(),
             'priority' => $this->faker->randomElement(['baja', 'media', 'alta']),
             'tag' => $this->faker->randomElement(['web', 'redes', 'newsletter']),
+            'status' => $this->faker->randomElement(['Sin empezar', 'Pausa', 'En progreso', 'Listo']),
             'limit_date' => $this->faker->dateTimeBetween('now', '+1 month'),
         ];
     }
