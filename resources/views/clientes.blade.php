@@ -60,9 +60,10 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {{$clientes[1]->image}}
                         @foreach($clientes as $cliente)
                             <x-tabla-clientes name="{{ $cliente->name }}" phone="{{ $cliente->phone }}"
-                                mail="{{ $cliente->email }}">
+                                mail="{{ $cliente->email }}" id="{{ $cliente->id }}" image="{{ $cliente->image }}">
                             </x-tabla-clientes>
                         @endforeach
                     </tbody>

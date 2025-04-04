@@ -14,7 +14,8 @@ class Cliente extends Model
     protected $fillable = [
         'name',
         'email',
-        'phone'
+        'phone',
+        'image'
     ];
 
     // Relación con Tarea N-N, tienendo un modelo pivote
