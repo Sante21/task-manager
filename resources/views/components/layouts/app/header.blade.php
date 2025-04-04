@@ -23,11 +23,11 @@
                 <flux:tooltip content="Search" position="bottom">
                     <flux:navbar.item class="!h-10 [&>div>svg]:size-5" icon="magnifying-glass" href="#" label="Search" />
                 </flux:tooltip>
-                <flux:tooltip content="Repository" position="bottom">
+                <flux:tooltip content="Repositorio" position="bottom">
                     <flux:navbar.item
                         class="h-10 max-lg:hidden [&>div>svg]:size-5"
                         icon="folder-git-2"
-                        href="https://github.com/laravel/livewire-starter-kit"
+                        href="https://github.com/Sante21/task-manager"
                         target="_blank"
                         label="Repository"
                     />

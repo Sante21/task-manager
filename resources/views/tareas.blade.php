@@ -16,7 +16,7 @@
                             Ver tareas
                         </button>
                         <button
-                            class="flex select-none items-center gap-2 rounded bg-slate-800 py-2.5 px-4 text-xs font-semibold text-white shadow-md shadow-slate-900/10 transition-all hover:shadow-lg hover:shadow-slate-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                            class="flex select-none items-center gap-2 rounded cursor-pointer bg-slate-800 dark:bg-white py-3 px-4 text-xs font-semibold text-white dark:text-slate-800 shadow-slate-900/10 transition-all hover:shadow-xs hover:shadow-slate-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             type="button">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                 aria-hidden="true" stroke-width="2" class="w-4 h-4">
@@ -30,7 +30,7 @@
                 </div>
 
             </div>
-            <div class="p-0 overflow-scroll">
+            <div class="p-0">
                 <table class="w-full mt-4 text-left table-auto min-w-max">
                     <thead>
                         <tr>
