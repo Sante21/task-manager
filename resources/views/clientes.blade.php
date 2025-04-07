@@ -54,16 +54,16 @@
                             </th>
                             <th class="p-4 text-sm font-normal leading-none text-slate-500 dark:text-slate-100">Email
                             </th>
-                            <th class="p-4 text-sm font-normal leading-none text-slate-500 dark:text-slate-100">Total
-                                Price</th>
+                            <th class="p-4 text-sm font-normal leading-none text-slate-500 dark:text-slate-100">Servicio
+                            </th>
                             <th class="p-4 text-sm font-normal leading-none text-slate-500 dark:text-slate-100"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        {{$clientes[1]->image}}
                         @foreach($clientes as $cliente)
                             <x-tabla-clientes name="{{ $cliente->name }}" phone="{{ $cliente->phone }}"
-                                mail="{{ $cliente->email }}" id="{{ $cliente->id }}" image="{{ $cliente->image }}">
+                                mail="{{ $cliente->email }}" id="{{ $cliente->id }}" service="{{ $cliente->service }}"
+                                image="{{ $cliente->image }}">
                             </x-tabla-clientes>
                         @endforeach
                     </tbody>

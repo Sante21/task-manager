@@ -63,7 +63,6 @@
         </div>
     </td>
 
-
     <!-- <td class="p-4 border-b border-slate-200">
         <div class="w-max">
             <select name="status" id="status" class="bg-gray-200 p-2 rounded-md text-xs font-bold uppercase">
@@ -86,8 +85,6 @@
             </select>
         </div>
     </td> -->
-
-
 
     <td class="p-4 border-b border-slate-200">
         <p class="text-sm text-slate-500">

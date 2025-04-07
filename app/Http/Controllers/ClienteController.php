@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 // use App\Http\Requests\StoreClienteRequest;
-use App\Http\Requests\UpdateClienteRequest;
+// use App\Http\Requests\UpdateClienteRequest;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Storage;
 
 class ClienteController extends Controller
 {
@@ -34,23 +35,26 @@ class ClienteController extends Controller
         $valid = $request->validate([
             'name' => 'required|string|max:100',
             'email' => 'required|email|max:200',
-            'phone' => 'required|string|max:20|min:9',
+            'phone' => 'nullable|string|max:20|min:9',
+            'service' => 'required|string|max:30',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:5120',
         ], [
             'name.required' => 'El campo name es obligatorio.',
             'email.required' => 'El campo email es obligatorio.',
-            'phone.required' => 'El campo telefon es obligatorio.',
+            // 'phone.required' => 'El campo telefon es obligatorio.',
+            'service' => 'required|string|max:30',
         ]);
 
         $imageName = pathinfo($request->image->getClientOriginalName(), PATHINFO_FILENAME) . '.' . $request->image->extension();
         // $imageName = time() . '.' . $request->image->extension();
         $request->image->move(public_path('images/favicons'), $imageName);
 
-        
+
         $cliente = new Cliente();
         $cliente->name = $request->name;
         $cliente->email = $request->email;
         $cliente->phone = $request->phone;
+        $cliente->service = $request->service;
         $cliente->image = 'images/favicons/' . $imageName;
         $cliente->save();
 
@@ -86,16 +90,43 @@ class ClienteController extends Controller
         $valid = $request->validate([
             'name' => 'required|string|max:100',
             'email' => 'required|email|max:200',
-            'phone' => 'required|string|max:20|min:9',
+            'phone' => 'nullable|string|max:20|min:9',
+            'service' => 'required|string|max:30',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
         ], [
             'name.required' => 'El campo name es obligatorio.',
             'email.required' => 'El campo email es obligatorio.',
-            'phone.required' => 'El campo telefon es obligatorio.',
+            // 'phone.required' => 'El campo telefon es obligatorio.',
+            'service' => 'required|string|max:30',
         ]);
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store();
+        }
+
+        $imageName = pathinfo($request->image->getClientOriginalName(), PATHINFO_FILENAME) . '.' . $request->image->extension();
+        // $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images/favicons'), $imageName);
 
         $cliente->name = $valid['name'];
         $cliente->email = $valid['email'];
         $cliente->phone = $valid['phone'];
+        $cliente->service = $valid['service'];
+        $cliente->image = 'images/favicons/' . $imageName;
+
+        // if ($request->hasFile('image')) {
+        //     // Eliminar la imagen anterior si existe
+        //     if ($cliente->image && Storage::exists($cliente->image)) {
+        //         Storage::delete($cliente->image);
+        //     }
+
+        //     // Generar el nombre de la nueva imagen
+        //     $imagePath = $request->file('image')->store('clientes/favicons', 'public');
+
+        //     // Asignar la nueva imagen al cliente
+        //     $cliente->image = $imagePath;
+        // }
+
 
         $cliente->save();
 

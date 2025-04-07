@@ -40,11 +40,24 @@
                         class="w-full px-4 py-2 border text-gray-900 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
                         placeholder="+34 654 32 10 98" />
                 </div>
-                <div class="w-full px-3 mb-8 mt-8" id="drop-area">
+
+                <div>
+                    <label for="service"
+                        class="block text-sm font-medium text-gray-700 dark:text-white mb-1">Service</label>
+                    <select name="service" id="service"
+                        class="w-full px-4 py-2 border text-gray-700 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all">
+                        <option value="" selected disabled>Selecciona el servicio</option>
+                        <option value="Redes" class="text-gray-900">Redes</option>
+                        <option value="Web" class="text-gray-900">Web</option>
+                        <option value="Redes y Web" class="text-gray-900">Redes y Web</option>
+                    </select>
+                </div>
+
+                <div class="w-full mb-8 mt-8" id="drop-area">
                     <label id="label"
-                        class="mx-auto cursor-pointer flex w-full max-w-lg flex-col items-center justify-center rounded-xl border-2 border-dashed border-green-400 p-6 text-center"
+                        class="mx-auto cursor-pointer flex w-full max-w-lg flex-col items-center justify-center rounded-xl border-2 border-dashed border-indigo-400 p-6 text-center"
                         htmlFor="image">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-800" fill="none"
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-indigo-600" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round"
                                 d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />

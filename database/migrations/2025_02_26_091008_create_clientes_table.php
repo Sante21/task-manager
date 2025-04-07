@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('phone')->nullable();
+            $table->enum('service', ['Redes', 'Web', 'Redes y Web'])->default('Redes');
             $table->string('image')->nullable();
             $table->timestamps();
         });
