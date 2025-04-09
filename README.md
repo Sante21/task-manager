@@ -52,7 +52,7 @@ php artisan migrate --seed
 
 ### 5️⃣ Iniciar el servidor
 ```sh
-php artisan serve
+Composer run dev
 ```
 
 ## 🛠 Funcionalidades principales
