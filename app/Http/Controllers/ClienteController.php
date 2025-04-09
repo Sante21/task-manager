@@ -49,7 +49,6 @@ class ClienteController extends Controller
         // $imageName = time() . '.' . $request->image->extension();
         $request->image->move(public_path('images/favicons'), $imageName);
 
-
         $cliente = new Cliente();
         $cliente->name = $request->name;
         $cliente->email = $request->email;
@@ -57,8 +56,6 @@ class ClienteController extends Controller
         $cliente->service = $request->service;
         $cliente->image = 'images/favicons/' . $imageName;
         $cliente->save();
-
-        // dd($valid);
 
         // $cliente = Cliente::create($valid);
 
@@ -96,7 +93,6 @@ class ClienteController extends Controller
         ], [
             'name.required' => 'El campo name es obligatorio.',
             'email.required' => 'El campo email es obligatorio.',
-            // 'phone.required' => 'El campo telefon es obligatorio.',
             'service' => 'required|string|max:30',
         ]);
 
@@ -114,20 +110,6 @@ class ClienteController extends Controller
         $cliente->service = $valid['service'];
         $cliente->image = 'images/favicons/' . $imageName;
 
-        // if ($request->hasFile('image')) {
-        //     // Eliminar la imagen anterior si existe
-        //     if ($cliente->image && Storage::exists($cliente->image)) {
-        //         Storage::delete($cliente->image);
-        //     }
-
-        //     // Generar el nombre de la nueva imagen
-        //     $imagePath = $request->file('image')->store('clientes/favicons', 'public');
-
-        //     // Asignar la nueva imagen al cliente
-        //     $cliente->image = $imagePath;
-        // }
-
-
         $cliente->save();
 
         return redirect()->route('clientes.index');
@@ -139,6 +121,14 @@ class ClienteController extends Controller
     public function destroy($id)
     {
         $cliente = Cliente::findOrFail($id);
+
+        if ($cliente && $cliente->image) {
+            $imagePath = public_path($cliente->image);
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+
         $cliente->delete();
         return redirect()->route('clientes.index');
     }
