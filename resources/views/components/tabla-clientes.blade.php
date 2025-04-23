@@ -53,10 +53,10 @@
                         d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                 </svg>
             </a>
-            <form action="{{ route('clientes.destroy', $id) }}" method="POST">
+            <form action="{{ route('clientes.destroy', $id) }}" method="POST" id="formDel">
                 @csrf
                 @method('DELETE') <!-- Esto simula un método DELETE -->
-                <button type="submit" class="cursor-pointer">
+                <button onclick="confirmation(e)" type="submit" class="cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="h-6 w-6" x-tooltip="tooltip">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -68,3 +68,28 @@
         </div>
     </td>
 </tr>
+
+<script>
+    document.addEventListener('click', () => {
+        let urlDel = document.getElementById('formDel');
+        console.log(urlToRedirect);
+    })
+
+    function confirmation(e) {
+        e.preventDefault();
+        const urlToRedirect = urlDel.action;
+        console.log(urlToRedirect);
+        swal({
+            title: "¿Seguro que quieres eliminar este Cliente?",
+            text: "Si aceptas, no podrás revertir esta acción",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true
+        })
+            .then((willCancel) => {
+                if (willCancel) {
+                    window.location.href = urlToRedirect
+                }
+            })
+    }
+</script>

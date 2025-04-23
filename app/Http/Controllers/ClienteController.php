@@ -37,24 +37,25 @@ class ClienteController extends Controller
             'email' => 'required|email|max:200',
             'phone' => 'nullable|string|max:20|min:9',
             'service' => 'required|string|max:30',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:5120',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
         ], [
             'name.required' => 'El campo name es obligatorio.',
             'email.required' => 'El campo email es obligatorio.',
-            // 'phone.required' => 'El campo telefon es obligatorio.',
             'service' => 'required|string|max:30',
         ]);
 
-        $imageName = pathinfo($request->image->getClientOriginalName(), PATHINFO_FILENAME) . '.' . $request->image->extension();
-        // $imageName = time() . '.' . $request->image->extension();
-        $request->image->move(public_path('images/favicons'), $imageName);
-
         $cliente = new Cliente();
-        $cliente->name = $request->name;
-        $cliente->email = $request->email;
-        $cliente->phone = $request->phone;
-        $cliente->service = $request->service;
-        $cliente->image = 'images/favicons/' . $imageName;
+        
+        if ($request->hasFile('image')) {
+            $imageName = pathinfo($request->image->getClientOriginalName(), PATHINFO_FILENAME) . '.' . $request->image->extension();
+            $request->image->move(public_path('images/favicons'), $imageName);
+            $cliente->image = 'images/favicons/' . $imageName;
+        }
+        
+        $cliente->name = $valid['name'];
+        $cliente->email = $valid['email'];
+        $cliente->phone = $valid['phone'];
+        $cliente->service = $valid['service'];
         $cliente->save();
 
         // $cliente = Cliente::create($valid);
@@ -97,18 +98,19 @@ class ClienteController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store();
-        }
+            if ($cliente->image && file_exists(public_path($cliente->image))) {
+                unlink(public_path($cliente->image));
+            }
 
-        $imageName = pathinfo($request->image->getClientOriginalName(), PATHINFO_FILENAME) . '.' . $request->image->extension();
-        // $imageName = time() . '.' . $request->image->extension();
-        $request->image->move(public_path('images/favicons'), $imageName);
+            $imageName = pathinfo($request->image->getClientOriginalName(), PATHINFO_FILENAME) . '.' . $request->image->extension();
+            $request->image->move(public_path('images/favicons'), $imageName);
+            $cliente->image = 'images/favicons/' . $imageName;
+        }
 
         $cliente->name = $valid['name'];
         $cliente->email = $valid['email'];
         $cliente->phone = $valid['phone'];
         $cliente->service = $valid['service'];
-        $cliente->image = 'images/favicons/' . $imageName;
 
         $cliente->save();
 

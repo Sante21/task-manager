@@ -51,9 +51,28 @@
                         <option value="" selected disabled>Selecciona el servicio</option>
                         <option value="Redes" @if ($cliente->service == 'Redes') selected @endif>Redes</option>
                         <option value="Web" @if ($cliente->service == 'Web') selected @endif>Web</option>
-                        <option value="Redes y Web" @if ($cliente->service == 'Redes y Web') selected @endif>Redes y Web</option>
+                        <option value="Redes y Web" @if ($cliente->service == 'Redes y Web') selected @endif>Redes y Web
+                        </option>
                     </select>
                 </div>
+
+                <!-- <div class="w-full mb-8 mt-8" id="drop-area">
+                    <label id="label"
+                        class="mx-auto cursor-pointer flex w-full max-w-lg flex-col items-center justify-center rounded-xl border-2 border-dashed border-indigo-400 p-6 text-center"
+                        htmlFor="image">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-indigo-600" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round"
+                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+
+                        <h2 class="mt-4 text-xl font-medium text-gray-700 tracking-wide">Favicon del cliente</h2>
+                        <p class="mt-2 text-gray-500 tracking-wide">Sube o arrastra tu archivo PNG, JPG, JPEG o GIF.</p>
+
+                        <input id="image" type="file" class="hidden" name="image"
+                            accept="image/jpeg, image/png, image/jpg, image/gif" />
+                    </label>
+                </div> -->
 
                 <div class="w-full mb-8 mt-8" id="drop-area">
                     <label id="label"
@@ -71,7 +90,16 @@
                         <input id="image" type="file" class="hidden" name="image"
                             accept="image/jpeg, image/png, image/jpg, image/gif" />
                     </label>
+
+                    @if ($cliente->image)
+                        <div class="mt-4 text-center">
+                            <p class="text-gray-700 font-bold">Favicon actual:</p>
+                            <img src="{{ asset($cliente->image) }}" alt="Favicon actual"
+                                class="w-20 mx-auto mt-2 rounded-md">
+                        </div>
+                    @endif
                 </div>
+
 
                 <button type="submit"
                     class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 rounded-lg transition-colors mt-4 cursor-pointer">
