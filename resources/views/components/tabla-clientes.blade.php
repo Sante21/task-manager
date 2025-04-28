@@ -70,10 +70,11 @@
 </tr>
 
 <script>
-    document.addEventListener('click', () => {
-        let urlDel = document.getElementById('formDel');
-        console.log(urlToRedirect);
-    })
+    // let urlDel;
+    // document.addEventListener('click', () => {
+    //     urlDel = document.getElementById('formDel');
+    //     console.log(urlDel);
+    // })
 
     function confirmation(e) {
         e.preventDefault();
