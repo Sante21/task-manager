@@ -56,14 +56,14 @@
 name: tests
 
 on:
-push:
-  branches:
-    - develop
-    - main
-pull_request:
-  branches:
-    - develop
-    - main
+  push:
+    branches:
+      - develop
+      - main
+  pull_request:
+    branches:
+      - develop
+      - main
 
 jobs:
 ci:
