@@ -42,7 +42,7 @@
             </div>
 
             <div
-                class="relative flex flex-col w-full h-full text-gray-700 bg-white dark:bg-neutral-800 shadow-md rounded-lg bg-clip-border">
+                class="relative flex flex-col w-full text-gray-700 bg-white dark:bg-neutral-800 shadow-md rounded-lg bg-clip-border">
                 <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
                     <thead>
                         <tr class="border-b border-slate-300 bg-slate-50 dark:bg-neutral-950">

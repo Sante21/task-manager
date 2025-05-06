@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tarea;
-use App\Http\Requests\StoreTareaRequest;
-use App\Http\Requests\UpdateTareaRequest;
+// use App\Http\Requests\StoreTareaRequest;
+// use App\Http\Requests\UpdateTareaRequest;
+use Illuminate\Http\Request;
 
 class TareaController extends Controller
 {
@@ -22,13 +23,13 @@ class TareaController extends Controller
      */
     public function create()
     {
-        //
+        return view('tarea.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTareaRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -52,7 +53,7 @@ class TareaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTareaRequest $request, Tarea $tarea)
+    public function update(Request $request, Tarea $tarea)
     {
         //
     }
