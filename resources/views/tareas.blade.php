@@ -99,7 +99,7 @@
                             <th
                                 class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
                                 <p
-                                    class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">
+                                    class="flex items-center justify-between gap-2 font-sans text-sm font-normal leading-none text-slate-500">
                                     Fecha Limite
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="2" stroke="currentColor" aria-hidden="true" class="w-4 h-4">

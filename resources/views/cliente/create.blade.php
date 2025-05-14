@@ -3,7 +3,7 @@
     <div class="min-h-screen flex items-center justify-center p-4">
         <div class="max-w-md w-full bg-white dark:bg-neutral-900 rounded-xl shadow-lg p-8">
 
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Nuevo cliente</h2>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Nuevo cliente</h2>
             <form class="space-y-4" action="{{ route('clientes.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <!-- Errores generales -->
@@ -21,7 +21,7 @@
                     <label for="name"
                         class="block text-sm font-medium text-gray-700 dark:text-white mb-1">Nombre</label>
                     <input type="text" name="name" id="name"
-                        class="w-full px-4 py-2 border text-gray-900 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
+                        class="w-full px-4 py-2 border text-gray-900 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all"
                         placeholder="Nombre">
                 </div>
 
@@ -29,7 +29,7 @@
                     <label for="email"
                         class="block text-sm font-medium text-gray-700 dark:text-white mb-1">Email</label>
                     <input type="email" name="email" id="email"
-                        class="w-full px-4 py-2 border text-gray-900 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
+                        class="w-full px-4 py-2 border text-gray-900 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all"
                         placeholder="cliente@email.com" />
                 </div>
 
@@ -37,7 +37,7 @@
                     <label for="phone"
                         class="block text-sm font-medium text-gray-700 dark:text-white mb-1">Telefono</label>
                     <input type="text" name="phone" id="phone"
-                        class="w-full px-4 py-2 border text-gray-900 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
+                        class="w-full px-4 py-2 border text-gray-900 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all"
                         placeholder="+34 654 32 10 98" />
                 </div>
 
@@ -45,7 +45,7 @@
                     <label for="service"
                         class="block text-sm font-medium text-gray-700 dark:text-white mb-1">Service</label>
                     <select name="service" id="service"
-                        class="w-full px-4 py-2 border text-gray-700 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all">
+                        class="w-full px-4 py-2 border text-gray-700 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all">
                         <option value="" selected disabled>Selecciona el servicio</option>
                         <option value="Redes" class="text-gray-900">Redes</option>
                         <option value="Web" class="text-gray-900">Web</option>
@@ -55,9 +55,9 @@
 
                 <div class="w-full mb-8 mt-8" id="drop-area">
                     <label id="label"
-                        class="mx-auto cursor-pointer flex w-full max-w-lg flex-col items-center justify-center rounded-xl border-2 border-dashed border-indigo-400 p-6 text-center"
+                        class="mx-auto cursor-pointer flex w-full max-w-lg flex-col items-center justify-center rounded-xl border-2 border-dashed border-blue-500 p-6 text-center"
                         htmlFor="image">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-indigo-600" fill="none"
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-600" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                             <path strokeLinecap="round" strokeLinejoin="round"
                                 d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
@@ -71,7 +71,7 @@
                     </label>
                 </div>
                 <button type="submit"
-                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 rounded-lg transition-colors mt-4 cursor-pointer">
+                    class="w-full bg-neutral-600 hover:bg-neutral-700 hover:shadow-lg text-white py-2.5 mt-4 font-medium transition-colors duration-150 ease-linear rounded-lg shadow outline-none focus:outline-none cursor-pointer">
                     Añadir cliente
                 </button>
             </form>

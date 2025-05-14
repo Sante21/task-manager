@@ -31,7 +31,24 @@ class TareaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valid = $request->validate([
+            'title'=> 'required|string|max:300',
+            'description'=> 'required|string|max:300',
+            'priority'=> 'required|string|max:30',
+            'tag'=> 'required|string|max:30',
+            'status'=> 'required|string|max:30',
+            'limit_date' => 'required|date',
+        ], [
+            'title'=> 'El título name es obligatorio',
+            'priority'=> 'required|string|max:30',
+            'tag'=> 'required|string|max:30',
+            'status'=> 'required|string|max:30',
+            'limit_date'=> 'required|date',
+        ]);
+
+        Tarea::create($valid);
+
+        return redirect()->route('tareas.index');
     }
 
     /**
