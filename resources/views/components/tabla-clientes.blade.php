@@ -69,11 +69,6 @@
 </tr>
 
 <script>
-    // let urlDel;
-    // document.addEventListener('click', () => {
-    //     urlDel = document.getElementById('formDel');
-    //     console.log(urlDel);
-    // })
 
     function confirmation(e) {
         e.preventDefault();

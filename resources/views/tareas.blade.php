@@ -118,7 +118,7 @@
                     </thead>
                     <tbody>
                         @foreach($tareas as $tarea)
-                            <x-tabla-tareas title="{{ $tarea->title }}" desc="{{ $tarea->description }}"
+                            <x-tabla-tareas title="{{ $tarea->title }}" id="{{ $tarea->id }}" desc="{{ $tarea->description }}"
                                 priority="{{ $tarea->priority }}" tag="{{ $tarea->tag }}" status="{{ $tarea->status }}"
                                 date="{{ $tarea->limit_date }}">
                                 <x-slot name="client">
