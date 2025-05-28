@@ -126,6 +126,11 @@
                                         {{ $cliente->name }}
                                     @endforeach
                                 </x-slot>
+                                <x-slot name="favicon">
+                                    @foreach ($tarea->clientes as $cliente)
+                                        {{ $cliente->image }}
+                                    @endforeach
+                                </x-slot>
                                 <x-slot name="mail">
                                     @foreach ($tarea->clientes as $cliente)
                                         {{ $cliente->email }}

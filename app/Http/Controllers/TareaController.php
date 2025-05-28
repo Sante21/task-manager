@@ -15,7 +15,8 @@ class TareaController extends Controller
      */
     public function index()
     {
-        $tareas = Tarea::all();
+        // $tareas = Tarea::all();
+        $tareas = Tarea::paginate(10);
         $client = Cliente::all();
         return view('tareas', compact('tareas'));
     }
@@ -110,6 +111,6 @@ class TareaController extends Controller
     {
         $tarea = Tarea::findOrFail($id);
         $tarea->delete();
-        return redirect()->route('tareas');
+        return redirect()->route('tareas.index');
     }
 }
