@@ -151,8 +151,9 @@
                     </tbody>
                 </table>
             </div>
-            <div class="flex items-center justify-between p-3">
-                <p class="block text-sm text-slate-500">
+            <div class="flex items-center justify-center p-3">
+                {{ $tareas->links() }}
+                <!-- <p class="block text-sm text-slate-500">
                     Page 1 of 10
                 </p>
                 <div class="flex gap-1">
@@ -166,7 +167,7 @@
                         type="button">
                         Next
                     </button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

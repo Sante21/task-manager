@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Responsable;
-use App\Http\Requests\StoreResponsableRequest;
-use App\Http\Requests\UpdateResponsableRequest;
+// use App\Http\Requests\StoreResponsableRequest;
+// use App\Http\Requests\UpdateResponsableRequest;
+use Illuminate\Http\Request;
 
 class ResponsableController extends Controller
 {
@@ -22,37 +23,51 @@ class ResponsableController extends Controller
      */
     public function create()
     {
-        //
+        return view('responsable.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreResponsableRequest $request)
+    public function store(Request $request)
     {
-        //
+        $valid = $request->validate(
+            [
+                'name' => 'required|string|max:100',
+                'cargo' => 'required|string|max:20',
+            ],
+            [
+                'name.required' => 'El campo name es obligatorio.',
+                'cargo.required' => 'El campo cargo es obligatorio.',
+            ]
+        );
+
+        Responsable::create($valid);
+        return redirect()->route('responsables.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Responsable $responsable)
+    public function show($id)
     {
-        //
+        $responsable = Responsable::findOrFail($id);
+        return view('responsable.show', compact('responsable'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Responsable $responsable)
+    public function edit($id)
     {
-        //
+        $responsable = Responsable::findOrFail($id);
+        return view('responsable.edit', compact('responsable'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateResponsableRequest $request, Responsable $responsable)
+    public function update(Request $request, Responsable $responsable)
     {
         //
     }
@@ -60,8 +75,9 @@ class ResponsableController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Responsable $responsable)
+    public function destroy($id)
     {
-        //
+        $responsable = Responsable::findOrFail($id);
+        $responsable->delete();
     }
 }
