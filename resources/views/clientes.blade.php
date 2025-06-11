@@ -2,7 +2,6 @@
     <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
         <!-- component -->
         <div>
-            <!-- class="max-w-[1080px] mx-auto" -->
             <div class="w-full flex justify-between items-center mb-4 mt-4 pl-3 p-2 border-b-gray-200">
                 <div>
                     <h3 class="text-lg font-semibold text-slate-800 dark:text-white">Clientes</h3>

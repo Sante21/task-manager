@@ -2,7 +2,7 @@
     <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
         <!-- component -->
 
-        <div class="relative flex flex-col w-full h-full text-slate-700 bg-white shadow-md rounded-xl bg-clip-border">
+        <div>
             <div class="relative mx-4 mt-4 overflow-hidden text-slate-700 bg-white rounded-none bg-clip-border">
                 <div class="flex items-center justify-between ">
                     <div>
@@ -30,7 +30,6 @@
                         </a>
                     </div>
                 </div>
-
             </div>
             <div class="p-0">
                 <table class="w-full mt-4 text-left table-auto min-w-max">

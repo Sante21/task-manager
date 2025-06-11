@@ -41,8 +41,9 @@ class ResponsableController extends Controller
                 'cargo.required' => 'El campo cargo es obligatorio.',
             ]
         );
-
+        
         Responsable::create($valid);
+        dd($valid);
         return redirect()->route('responsables.index');
     }
 
