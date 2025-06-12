@@ -1,6 +1,6 @@
 <x-layouts.app>
     <!-- component -->
-    <div class="min-h-screen flex items-center justify-center p-4">
+    <div class="flex items-center justify-center p-4">
         <div class="max-w-md w-full bg-white dark:bg-neutral-900 rounded-xl shadow-lg p-8">
 
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Nuevo cliente</h2>
@@ -63,8 +63,8 @@
                                 d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                         </svg>
 
-                        <h2 class="mt-4 text-xl font-medium text-gray-700 tracking-wide">Favicon del cliente</h2>
-                        <p class="mt-2 text-gray-500 tracking-wide">Sube o arrastra tu archivo PNG, JPG, JPEG o GIF.</p>
+                        <h2 class="mt-4 text-xl font-medium text-gray-700 dark:text-slate-200 tracking-wide">Favicon del cliente</h2>
+                        <p class="mt-2 text-gray-500 dark:text-slate-400 tracking-wide">Sube o arrastra tu archivo PNG, JPG, JPEG o GIF.</p>
 
                         <input id="image" type="file" class="hidden" name="image"
                             accept="image/jpeg, image/png, image/jpg, image/gif" />

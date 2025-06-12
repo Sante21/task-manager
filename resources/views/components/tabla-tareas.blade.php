@@ -1,43 +1,31 @@
-<tr>
-    <td class="p-4 border-b border-slate-200">
-        <div class="flex flex-col">
-            <p class="text-sm font-semibold text-slate-700 truncate max-w-xs">
-                {{$title}}
-            </p>
-        </div>
+<tr class="hover:bg-slate-50 dark:hover:bg-neutral-800 dark:bg-neutral-900">
+    <td class="p-4 border-b border-slate-200 py-5">
+        <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">{{$title}}</p>
     </td>
-    <td class="p-4 border-b border-slate-200">
-        <div class="flex flex-col">
-            <p class="text-sm font-semibold text-slate-700 truncate max-w-xs">
-                {{$desc}}
-            </p>
-        </div>
+    <td class="p-4 border-b border-slate-200 py-5">
+        <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">{{$desc}}</p>
     </td>
-    <td class="p-4 border-b border-slate-200">
+    <td class="p-4 border-b border-slate-200 py-5">
         <div class="flex items-center gap-3">
-            <img src="{{$favicon}}"
-                alt="{{$client}}" class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+            <img src="{{$favicon}}" alt="{{$client}}"
+                class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
             <div class="flex flex-col">
-                <p class="text-sm font-semibold text-slate-700">
-                    {{$client}}
-                </p>
-                <p class="text-sm text-slate-500">
-                    {{$mail}}
-                </p>
+                <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">{{$client}}</p>
+                <p class="block text-sm text-slate-600 dark:text-slate-300">{{$mail}}</p>
             </div>
         </div>
     </td>
-    <td class="p-4 border-b border-slate-200">
+    <td class="p-4 border-b border-slate-200 py-5">
         <div class="flex flex-col">
-            <p class="text-sm font-semibold text-slate-700">
+            <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">
                 {{ $responsable }}
             </p>
-            <p class="text-sm text-slate-500">
+            <p class="block text-sm text-slate-600 dark:text-slate-300">
                 {{ $cargo }}
             </p>
         </div>
     </td>
-    <td class="p-4 border-b border-slate-200">
+    <td class="p-4 border-b border-slate-200 py-5">
         <div class="w-max">
             @if ($status == "Sin empezar")
                 <div
@@ -86,10 +74,8 @@
         </div>
     </td> -->
 
-    <td class="p-4 border-b border-slate-200">
-        <p class="text-sm text-slate-500">
-            {{$date}}
-        </p>
+    <td class="p-4 border-b border-slate-200 py-5">
+        <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">{{$date}}</p>
     </td>
     <!-- <td class="p-4 border-b border-slate-200">
         <div class="flex justify-end gap-4">
