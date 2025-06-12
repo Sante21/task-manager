@@ -87,7 +87,6 @@
                         class="w-full px-4 py-2 border text-gray-900 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all"
                         placeholder="Nombre">
                 </div>
-
                 <!-- Campo Email -->
                 <div>
                     <label for="email"
@@ -96,7 +95,6 @@
                         class="w-full px-4 py-2 border text-gray-900 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all"
                         placeholder="cliente@email.com" />
                 </div>
-
                 <!-- Campo Telefono -->
                 <div>
                     <label for="phone"
@@ -105,7 +103,6 @@
                         class="w-full px-4 py-2 border text-gray-900 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all"
                         placeholder="+34 654 32 10 98" />
                 </div>
-
                 <!-- Campo Servicio -->
                 <div>
                     <label for="service"
@@ -118,7 +115,6 @@
                         <option value="Redes y Web" class="text-gray-900">Redes y Web</option>
                     </select>
                 </div>
-
                 <!-- Campo Logo -->
                 <div class="w-full mb-8 mt-8" id="drop-area">
                     <label id="label"
@@ -139,7 +135,6 @@
                             accept="image/jpeg, image/png, image/jpg, image/gif" />
                     </label>
                 </div>
-
                 <!-- Boton de Añadir Cliente -->
                 <button type="submit"
                     class="w-full bg-neutral-600 hover:bg-neutral-700 hover:shadow-lg text-white py-2.5 mt-4 font-medium transition-colors duration-150 ease-linear rounded-lg shadow outline-none focus:outline-none cursor-pointer">
