@@ -53,7 +53,7 @@
                     </thead>
                     <tbody class="divide-y divide-gray-100 border-t border-gray-100">
                         @foreach ($responsables as $responsable)
-                            <x-registroResponsables name="{{ $responsable->name }}" cargo="{{ $responsable->cargo }}"
+                            <x-registroResponsables name="{{ $responsable->name }}" cargo="{{ $responsable->cargo }}" image="{{ $responsable->image }}"
                                 mail="{{$responsable->user->email}}" rol="{{$responsable->user->rol}}">
                             </x-registroResponsables>
                         @endforeach

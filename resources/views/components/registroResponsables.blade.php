@@ -2,7 +2,7 @@
     <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
         <div class="relative h-10 w-10">
             <img class="h-full w-full rounded-full object-cover object-center"
-                src="{{ asset('images/' . $name . '.jpeg') }}" alt="{{$name}}"/>
+                src="{{ $image }}" alt="{{$name}}"/>
             <span class="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
         </div>
         <div class="text-sm">

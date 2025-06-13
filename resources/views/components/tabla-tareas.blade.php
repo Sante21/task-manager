@@ -10,7 +10,7 @@
     <!-- Cliente -->
     <td class="p-4 border-b border-slate-200 py-5">
         <div class="flex items-center gap-3">
-            <img src="{{$faviconC}}" alt="{{$client}}"
+            <img src="{{ $faviconC }}" alt="{{$client}}"
                 class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
             <div class="flex flex-col">
                 <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">{{$client}}</p>
@@ -21,7 +21,7 @@
     <!-- Responsable -->
     <td class="p-4 border-b border-slate-200 py-5">
         <div class="flex items-center gap-3">
-            <img src="{{ asset('images/' . $responsable . '.jpeg') }}" alt="{{$responsable}}"
+            <img src="{{ $faviconR }}" alt="{{$responsable}}"
                 class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
             <div class="flex flex-col">
                 <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">
