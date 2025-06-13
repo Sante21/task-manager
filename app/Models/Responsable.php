@@ -14,6 +14,7 @@ class Responsable extends Model
     protected $fillable = [
         'name',
         'cargo',
+        'image',
         'user_id',
     ];
 

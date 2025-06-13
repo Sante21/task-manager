@@ -16,6 +16,7 @@ return new class extends Migration
 
             $table->string('name');
             $table->enum('cargo', ['Marketing', 'Web'])->default('Marketing');
+            $table->string('image')->nullable();
 
             $table->foreignId('user_id')->unique()->constrained('users')->onDelete('cascade');
             

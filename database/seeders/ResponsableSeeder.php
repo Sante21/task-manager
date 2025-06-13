@@ -17,9 +17,9 @@ class ResponsableSeeder extends Seeder
     public function run(): void
     {
         // Responsable::factory()->count(4)->create();
-        DB::table('responsables')->insert(['name' => 'Iker', 'cargo' => 'Web', 'user_id' => '2']);
-        DB::table('responsables')->insert(['name' => 'Ayna', 'cargo' => 'Marketing', 'user_id' => '4']);
-        DB::table('responsables')->insert(['name' => 'Eloi', 'cargo' => 'Marketing', 'user_id' => '5']);
-        DB::table('responsables')->insert(['name' => 'Elena', 'cargo' => 'Marketing', 'user_id' => '6']);
+        DB::table('responsables')->insert(['name' => 'Iker', 'cargo' => 'Web', 'user_id' => '2', 'image' => 'images/responsables/Iker.jpeg']);
+        DB::table('responsables')->insert(['name' => 'Ayna', 'cargo' => 'Marketing', 'user_id' => '4', 'image' => 'images/responsables/Ayna.jpeg']);
+        DB::table('responsables')->insert(['name' => 'Eloi', 'cargo' => 'Marketing', 'user_id' => '5', 'image' => 'images/responsables/Eloi.jpeg']);
+        DB::table('responsables')->insert(['name' => 'Elena', 'cargo' => 'Marketing', 'user_id' => '6', 'image' => 'images/responsables/Elena.jpeg']);
     }
 }

@@ -1,13 +1,16 @@
 <tr class="hover:bg-slate-50 dark:hover:bg-neutral-800 dark:bg-neutral-900">
+    <!-- Titulo -->
     <td class="p-4 border-b border-slate-200 py-5">
         <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">{{$title}}</p>
     </td>
+    <!-- Descripción -->
     <td class="p-4 border-b border-slate-200 py-5">
         <p class="block font-semibold text-sm text-slate-500 dark:text-slate-200">{{$desc}}</p>
     </td>
+    <!-- Cliente -->
     <td class="p-4 border-b border-slate-200 py-5">
         <div class="flex items-center gap-3">
-            <img src="{{$favicon}}" alt="{{$client}}"
+            <img src="{{$faviconC}}" alt="{{$client}}"
                 class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
             <div class="flex flex-col">
                 <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">{{$client}}</p>
@@ -15,16 +18,22 @@
             </div>
         </div>
     </td>
+    <!-- Responsable -->
     <td class="p-4 border-b border-slate-200 py-5">
-        <div class="flex flex-col">
-            <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">
-                {{ $responsable }}
-            </p>
-            <p class="block text-sm text-slate-600 dark:text-slate-300">
-                {{ $cargo }}
-            </p>
+        <div class="flex items-center gap-3">
+            <img src="{{ asset('images/' . $responsable . '.jpeg') }}" alt="{{$responsable}}"
+                class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+            <div class="flex flex-col">
+                <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">
+                    {{ $responsable }}
+                </p>
+                <p class="block text-sm text-slate-600 dark:text-slate-300">
+                    {{ $cargo }}
+                </p>
+            </div>
         </div>
     </td>
+    <!-- Estado -->
     <td class="p-4 border-b border-slate-200 py-5">
         <div class="w-max">
             @if ($status == "Sin empezar")
@@ -50,30 +59,7 @@
             @endif
         </div>
     </td>
-
-    <!-- <td class="p-4 border-b border-slate-200">
-        <div class="w-max">
-            <select name="status" id="status" class="bg-gray-200 p-2 rounded-md text-xs font-bold uppercase">
-                <option value="Sin empezar" @if($status == "Sin empezar") selected @endif
-                    class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-gray-900 uppercase rounded-md select-none whitespace-nowrap bg-gray-300">
-                    Sin empezar
-                </option>
-                <option value="Pausa" @if($status == "Pausa") selected @endif
-                class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-gray-900 uppercase rounded-md select-none whitespace-nowrap bg-gray-300">
-                    Pausa
-                </option>
-                <option value="En progreso" @if($status == "En progreso") selected @endif
-                    class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-blue-900 uppercase rounded-md select-none whitespace-nowrap bg-blue-300">
-                    En progreso
-                </option>
-                <option value="Listo" @if($status == "Listo") selected @endif
-                    class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 uppercase rounded-md select-none whitespace-nowrap bg-green-500/20">
-                    Listo
-                </option>
-            </select>
-        </div>
-    </td> -->
-
+    <!-- Fecha -->
     <td class="p-4 border-b border-slate-200 py-5">
         <p class="block text-sm text-slate-500 dark:text-slate-200">{{$date}}</p>
     </td>

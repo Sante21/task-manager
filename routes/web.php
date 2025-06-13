@@ -1,9 +1,7 @@
 <?php
 
-use App\Models\Responsable;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
-use App\Models\Cliente;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\TareaController;
 use App\Http\Controllers\ResponsableController;

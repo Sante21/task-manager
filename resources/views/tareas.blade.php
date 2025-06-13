@@ -112,19 +112,24 @@
                                         {{ $cliente->name }}
                                     @endforeach
                                 </x-slot>
-                                <x-slot name="favicon">
+                                <x-slot name="faviconC">
                                     @foreach ($tarea->clientes as $cliente)
                                         {{ $cliente->image }}
                                     @endforeach
                                 </x-slot>
                                 <x-slot name="mail">
                                     @foreach ($tarea->clientes as $cliente)
-                                        {{ $cliente->email }}
+                                    {{ $cliente->email }}
                                     @endforeach
                                 </x-slot>
                                 <x-slot name="responsable">
                                     @foreach ($tarea->responsables as $responsable)
-                                        {{ $responsable->name }}
+                                    {{ $responsable->name }}
+                                    @endforeach
+                                </x-slot>
+                                <x-slot name="faviconR">
+                                    @foreach ($tarea->responsables as $responsable)
+                                        {{ $responsable->image }}
                                     @endforeach
                                 </x-slot>
                                 <x-slot name="cargo">
