@@ -9,7 +9,7 @@
                 </div>
                 <div class="mx-3">
                     <!-- <a href="clientes/create"> -->
-                    <button onclick="openModal()"
+                    <button onclick="openModalC()"
                         class="flex select-none items-center gap-2 rounded cursor-pointer bg-slate-800 dark:bg-white py-3 px-4 text-xs font-semibold text-white dark:text-slate-800 shadow-md shadow-slate-900/10 transition-all hover:shadow-xs hover:shadow-slate-900/20 dark:hover:shadow-gray-500 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                         type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -56,10 +56,10 @@
     </div>
 
 
-    <!-- Modal -->
-    <div id="modalForm" class="fixed inset-0 bg-black/50 flex justify-center items-center z-50 hidden">
+    <!-- Modal Create -->
+    <div id="modalFormCreate" class="fixed inset-0 bg-black/50 flex justify-center items-center z-50 hidden">
         <div class="max-w-md w-full bg-white dark:bg-neutral-900 rounded-xl shadow-lg p-8">
-            <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 dark:hover:text-white">
+            <button onclick="closeModalC()" class="text-gray-400 hover:text-gray-600 dark:hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -157,12 +157,22 @@
             console.log(urlDel);
         })
 
-        function openModal() {
-            document.getElementById('modalForm').classList.remove('hidden');
+        // Modal Formulario de Creación
+        function openModalC() {
+            document.getElementById('modalFormCreate').classList.remove('hidden');
         }
 
-        function closeModal() {
-            document.getElementById('modalForm').classList.add('hidden');
+        function closeModalC() {
+            document.getElementById('modalFormCreate').classList.add('hidden');
+        }
+
+        // Modal Formulario de Edición
+        function openModalE() {
+            document.getElementById('modalFormEdit').classList.remove('hidden');
+        }
+
+        function closeModalE() {
+            document.getElementById('modalFormEdit').classList.add('hidden');
         }
 
         const dropArea = document.getElementById("drop-area");

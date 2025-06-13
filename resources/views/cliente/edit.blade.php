@@ -3,7 +3,7 @@
     <div class="flex items-center justify-center p-4">
         <div class="max-w-md w-full bg-white dark:bg-neutral-900 rounded-xl shadow-lg p-8">
 
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Nuevo cliente</h2>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Editar cliente</h2>
             <form class="space-y-4" action="{{ route('clientes.update', $cliente->id) }}" method="post"
                 enctype="multipart/form-data">
                 @csrf

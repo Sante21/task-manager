@@ -4,9 +4,9 @@
         <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">{{$title}}</p>
     </td>
     <!-- Descripción -->
-    <td class="p-4 border-b border-slate-200 py-5">
+    <!-- <td class="p-4 border-b border-slate-200 py-5">
         <p class="block font-semibold text-sm text-slate-500 dark:text-slate-200">{{$desc}}</p>
-    </td>
+    </td> -->
     <!-- Cliente -->
     <td class="p-4 border-b border-slate-200 py-5">
         <div class="flex items-center gap-3">

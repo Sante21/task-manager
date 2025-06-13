@@ -23,9 +23,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             ResponsableSeeder::class,
-            ResponsableTareaSeeder::class,
             ClienteSeeder::class,
             TareaSeeder::class,
+            ResponsableTareaSeeder::class,
             ClienteTareaSeeder::class,
         ]);
     }

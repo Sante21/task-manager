@@ -21,7 +21,7 @@ class ClienteSeeder extends Seeder
             'email' => 'comercial@jovitec.es',
             'phone' => '+34 937 19 01 45',
             'service' => 'Redes y Web',
-            'image' => 'images/favicons/Favicon Grupo Jovitec.png'
+            'image' => 'images/favicons/logo grupo.png'
         ]);
 
         DB::table('clientes')->insert([
