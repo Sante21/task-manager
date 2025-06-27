@@ -35,15 +35,30 @@ class ResponsableController extends Controller
             [
                 'name' => 'required|string|max:100',
                 'cargo' => 'required|string|max:20',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
             ],
             [
                 'name.required' => 'El campo name es obligatorio.',
                 'cargo.required' => 'El campo cargo es obligatorio.',
             ]
         );
-        
+
         Responsable::create($valid);
-        dd($valid);
+        dd('??');
+
+        $responsable = new Responsable();
+
+        if ($request->hasFile('image')) {
+            $imageName = pathinfo($request->image->getClientOriginalName(), PATHINFO_FILENAME) . '.' . $request->image->extension();
+            $request->image->move(public_path('images/responsables'), $imageName);
+            $responsable->image = 'images/favicons/' . $imageName;
+        }
+
+        $responsable->name = $valid['name'];
+        $responsable->email = $valid['cargo'];
+        $responsable->save();
+
+
         return redirect()->route('responsables.index');
     }
 

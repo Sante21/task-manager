@@ -41,7 +41,7 @@ class ClienteController extends Controller
         ], [
             'name.required' => 'El campo name es obligatorio.',
             'email.required' => 'El campo email es obligatorio.',
-            'service' => 'required|string|max:30',
+            'service.required' => 'required|string|max:30',
         ]);
 
         $cliente = new Cliente();
