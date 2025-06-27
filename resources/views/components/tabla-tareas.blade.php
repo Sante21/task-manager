@@ -7,32 +7,6 @@
     <!-- <td class="p-4 border-b border-slate-200 py-5">
         <p class="block font-semibold text-sm text-slate-500 dark:text-slate-200">{{$desc}}</p>
     </td> -->
-    <!-- Cliente -->
-    <td class="p-4 border-b border-slate-200 py-5">
-        <div class="flex items-center gap-3">
-            <img src="{{ $faviconC }}" alt="{{$client}}"
-                class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
-            <div class="flex flex-col">
-                <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">{{$client}}</p>
-                <p class="block text-sm text-slate-600 dark:text-slate-300">{{$mail}}</p>
-            </div>
-        </div>
-    </td>
-    <!-- Responsable -->
-    <td class="p-4 border-b border-slate-200 py-5">
-        <div class="flex items-center gap-3">
-            <img src="{{ $faviconR }}" alt="{{$responsable}}"
-                class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
-            <div class="flex flex-col">
-                <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">
-                    {{ $responsable }}
-                </p>
-                <p class="block text-sm text-slate-600 dark:text-slate-300">
-                    {{ $cargo }}
-                </p>
-            </div>
-        </div>
-    </td>
     <!-- Estado -->
     <td class="p-4 border-b border-slate-200 py-5">
         <div class="w-max">
@@ -59,10 +33,58 @@
             @endif
         </div>
     </td>
+    <!-- Cliente -->
+    <td class="p-4 border-b border-slate-200 py-5">
+        <div class="flex items-center gap-3">
+            <img src="{{ $faviconC }}" alt="{{$client}}"
+                class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+            <div class="flex flex-col">
+                <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">{{$client}}</p>
+                <p class="block text-sm text-slate-600 dark:text-slate-300">{{$mail}}</p>
+            </div>
+        </div>
+    </td>
+    <!-- Responsable -->
+    <td class="p-4 border-b border-slate-200 py-5">
+        <div class="flex items-center gap-3">
+            <img src="{{ $faviconR }}" alt="{{$responsable}}"
+                class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
+            <div class="flex flex-col">
+                <p class="block font-semibold text-sm text-slate-800 dark:text-slate-50">
+                    {{ $responsable }}
+                </p>
+                <p class="block text-sm text-slate-600 dark:text-slate-300">
+                    {{ $cargo }}
+                </p>
+            </div>
+        </div>
+    </td>
+    <!-- Prioridad -->
+    <td class="p-4 border-b border-slate-200 py-5">
+        <div class="w-max">
+            @if ($priority == "alta")
+                <div
+                    class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-red-900 uppercase rounded-md select-none whitespace-nowrap bg-red-300">
+                    <span class="">{{ $priority }}</span>
+                </div>
+            @elseif ($priority == 'media')
+                <div
+                    class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-orange-800 uppercase rounded-md select-none whitespace-nowrap bg-orange-200">
+                    <span class="">{{ $priority }}</span>
+                </div>
+            @elseif ($priority == 'baja')
+                <div
+                    class="relative grid items-center px-2 py-1 font-sans text-xs font-bold text-green-900 uppercase rounded-md select-none whitespace-nowrap bg-green-500/20">
+                    <span class="">{{ $priority }}</span>
+                </div>
+            @endif
+        </div>
+    </td>
     <!-- Fecha -->
     <td class="p-4 border-b border-slate-200 py-5">
         <p class="block text-sm text-slate-500 dark:text-slate-200">{{$date}}</p>
     </td>
+    
     <!-- <td class="p-4 border-b border-slate-200">
         <div class="flex justify-end gap-4">
             <a href="clientes/edit">
@@ -85,6 +107,8 @@
             </form>
         </div>
     </td> -->
+
+    <!-- Editar y eliminar -->
     <td class="p-4 border-b border-slate-200 py-5">
         <div class="flex justify-end gap-4">
             <a href="tareas/{{ $id }}/edit">
@@ -109,6 +133,7 @@
     </td>
 </tr>
 
+<!-- Script -->
 <script>
     function confirmation(e) {
         e.preventDefault();
@@ -129,6 +154,7 @@
     }
 </script>
 
+<!-- Estilos -->
 <style>
     .icon-hover-stroke {
         stroke: currentColor;

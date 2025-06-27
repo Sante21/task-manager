@@ -40,52 +40,20 @@
                                     </svg>
                                 </p> -->
                             </th>
-                            <!-- <th class="p-4 text-sm font-normal leading-none text-slate-500 dark:text-slate-100">
-                                Descripción
-                            </th> -->
+                            <th class="p-4 text-sm font-normal leading-none text-slate-500 dark:text-slate-100">
+                                Estado
+                            </th>
                             <th class="p-4 text-sm font-normal leading-none text-slate-500 dark:text-slate-100">
                                 Cliente
-                                <!-- <p
-                                    class="flex items-center justify-between gap-2 font-sans text-sm font-normal leading-none text-slate-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" aria-hidden="true" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
-                                    </svg>
-                                </p> -->
                             </th>
                             <th class="p-4 text-sm font-normal leading-none text-slate-500 dark:text-slate-100">
                                 Responsable
-                                <!-- <p
-                                    class="flex items-center justify-between gap-2 font-sans text-sm font-normal leading-none text-slate-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" aria-hidden="true" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
-                                    </svg>
-                                </p> -->
                             </th>
                             <th class="p-4 text-sm font-normal leading-none text-slate-500 dark:text-slate-100">
-                                Estado
-                                <!-- <p
-                                    class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" aria-hidden="true" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
-                                    </svg>
-                                </p> -->
+                                Prioridad
                             </th>
                             <th class="p-4 text-sm font-normal leading-none text-slate-500 dark:text-slate-100">
                                 Fecha Limite
-                                <!-- <p
-                                    class="flex items-center justify-between gap-2 font-sans text-sm font-normal leading-none text-slate-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="2" stroke="currentColor" aria-hidden="true" class="w-4 h-4">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path>
-                                    </svg>
-                                </p> -->
                             </th>
                             <th class="p-4 text-sm font-normal leading-none text-slate-500 dark:text-slate-100">
                                 <p
@@ -111,12 +79,12 @@
                                 </x-slot>
                                 <x-slot name="mail">
                                     @foreach ($tarea->clientes as $cliente)
-                                    {{ $cliente->email }}
+                                        {{ $cliente->email }}
                                     @endforeach
                                 </x-slot>
                                 <x-slot name="responsable">
                                     @foreach ($tarea->responsables as $responsable)
-                                    {{ $responsable->name }}
+                                        {{ $responsable->name }}
                                     @endforeach
                                 </x-slot>
                                 <x-slot name="faviconR">

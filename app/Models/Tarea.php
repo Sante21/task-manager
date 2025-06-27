@@ -15,9 +15,10 @@ class Tarea extends Model
         'title',
         'description',
         'priority',
+        'cliente_tarea',
+        'responsable_tarea',
         'tag',
         'status',
-        'client_id',
         'limit_date'
     ];
 

@@ -45,7 +45,7 @@
 
                 <div>
                     <label for="service"
-                        class="block text-sm font-medium text-gray-700 dark:text-white mb-1">Service</label>
+                        class="block text-sm font-medium text-gray-700 dark:text-white mb-1">Servicio</label>
                     <select name="service" id="service"
                         class="w-full px-4 py-2 border text-gray-700 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all">
                         <option value="" selected disabled>Selecciona el servicio</option>
@@ -55,24 +55,6 @@
                         </option>
                     </select>
                 </div>
-
-                <!-- <div class="w-full mb-8 mt-8" id="drop-area">
-                    <label id="label"
-                        class="mx-auto cursor-pointer flex w-full max-w-lg flex-col items-center justify-center rounded-xl border-2 border-dashed border-indigo-400 p-6 text-center"
-                        htmlFor="image">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-indigo-600" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                            <path strokeLinecap="round" strokeLinejoin="round"
-                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                        </svg>
-
-                        <h2 class="mt-4 text-xl font-medium text-gray-700 tracking-wide">Favicon del cliente</h2>
-                        <p class="mt-2 text-gray-500 tracking-wide">Sube o arrastra tu archivo PNG, JPG, JPEG o GIF.</p>
-
-                        <input id="image" type="file" class="hidden" name="image"
-                            accept="image/jpeg, image/png, image/jpg, image/gif" />
-                    </label>
-                </div> -->
 
                 <div class="w-full mb-8 mt-8" id="drop-area">
                     <label id="label"

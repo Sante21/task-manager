@@ -106,7 +106,7 @@
                 <!-- Campo Servicio -->
                 <div>
                     <label for="service"
-                        class="block text-sm font-medium text-gray-700 dark:text-white mb-1">Service</label>
+                        class="block text-sm font-medium text-gray-700 dark:text-white mb-1">Servicio</label>
                     <select name="service" id="service"
                         class="w-full px-4 py-2 border text-gray-700 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all">
                         <option value="" selected disabled>Selecciona el servicio</option>

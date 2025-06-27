@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Tarea;
 use App\Models\Cliente;
+use App\Models\Responsable;
+use Illuminate\Http\Request;
 // use App\Http\Requests\StoreTareaRequest;
 // use App\Http\Requests\UpdateTareaRequest;
-use Illuminate\Http\Request;
 
 class TareaController extends Controller
 {
@@ -26,7 +27,9 @@ class TareaController extends Controller
      */
     public function create()
     {
-        return view('tarea.create');
+        $clientes = Cliente::all();
+        $responsables = Responsable::all();
+        return view('tarea.create', compact('clientes', 'responsables'));
     }
 
     /**
@@ -38,6 +41,8 @@ class TareaController extends Controller
             'title' => 'required|string|max:300',
             'description' => 'required|string|max:300',
             'priority' => 'required|string|max:30',
+            'cliente_tarea' => 'required|exists:clientes,id',
+            'responsable_tarea' => 'required|exists:users,id',
             'tag' => 'required|string|max:30',
             'status' => 'required|string|max:30',
             'limit_date' => 'required|date',

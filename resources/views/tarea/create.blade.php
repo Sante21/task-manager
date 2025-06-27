@@ -36,14 +36,9 @@
         }
     </style>
 
-    <!-- <div class="min-h-screen bg-gray-100 p-0 sm:p-12"> -->
     <div class="min-h-screen flex items-center justify-center p-4">
-        <!-- <div class="mx-auto max-w-md px-6 py-12 bg-gray-50 border-0 shadow-lg sm:rounded-3xl"> -->
         <div class="max-w-md w-full bg-white dark:bg-neutral-900 rounded-xl shadow-lg p-8">
-
-            <!-- <h1 class="text-2xl font-bold mb-8">Crear nueva Tarea</h1> -->
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Nueva Tarea</h2>
-            <!-- <form id="form" novalidate> -->
             <form id="form" class="space-y-4" action="{{ route('tareas.store') }}" method="post"
                 enctype="multipart/form-data">
                 @csrf
@@ -85,8 +80,30 @@
                         <option value="media">Media</option>
                         <option value="alta">Alta</option>
                     </select>
-                    <!-- <span class="text-sm text-red-600 hidden" id="error">Debe de haber una prioridad
-                        seleccionada.</span> -->
+                </div>
+
+                <div>
+                    <label for="cliente_tarea"
+                        class="block text-sm font-medium text-gray-700 dark:text-white mb-1">Cliente</label>
+                    <select name="cliente_tarea" id="cliente_tarea" onclick="this.setAttribute('value', this.value);"
+                        class="w-full px-4 py-2 border text-gray-700 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all">
+                        <option value="" selected disabled>Selecciona el cliente</option>
+                        @foreach($clientes as $cliente)
+                            <option value="{{$cliente->id}}">{{$cliente->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="responsable_tarea"
+                        class="block text-sm font-medium text-gray-700 dark:text-white mb-1">Responsable</label>
+                    <select name="responsable_tarea" id="responsable_tarea" onclick="this.setAttribute('value', this.value);"
+                        class="w-full px-4 py-2 border text-gray-700 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all">
+                        <option value="" selected disabled>Selecciona un responsable</option>
+                        @foreach($responsables as $responsable)
+                            <option value="{{$responsable->id}}">{{$responsable->name}}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div>
@@ -99,8 +116,6 @@
                         <option value="web">Web</option>
                         <option value="newsletter">Newsletter</option>
                     </select>
-                    <!-- <span class="text-sm text-red-600 hidden" id="error">Debe de haber una prioridad
-                        seleccionada.</span> -->
                 </div>
 
                 <div>
@@ -114,8 +129,6 @@
                         <option value="en progreso">En progreso</option>
                         <option value="listo">Listo</option>
                     </select>
-                    <!-- <span class="text-sm text-red-600 hidden" id="error">Debe de haber una prioridad
-                        seleccionada.</span> -->
                 </div>
 
                 <div>
@@ -125,8 +138,6 @@
                         class="w-full px-4 py-2 border text-gray-900 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all">
                 </div>
 
-
-                
                 <button id="button" type="submit"
                     class="w-full bg-neutral-600 hover:bg-neutral-700 hover:shadow-lg text-white py-2.5 mt-4 font-medium transition-colors duration-150 ease-linear rounded-lg shadow outline-none focus:outline-none cursor-pointer">
                     Crear Tarea
@@ -142,7 +153,7 @@
         const errMessages = document.querySelectorAll('#error')
 
         function toggleError() {
-            // Show error message
+            // Mostrar mensaje de error
             errMessages.forEach((el) => {
                 el.classList.toggle('hidden')
             })
