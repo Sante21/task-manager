@@ -20,7 +20,7 @@
                     <flux:navlist.item icon="user-group" :href="route('clientes.index')" :current="request()->routeIs('clientes.*')" wire:navigate>{{ __('Clientes') }}</flux:navlist.item>
                     <flux:navlist.item icon="currency-dollar" :href="route('tareas.index')" :current="request()->routeIs('tareas.*')" wire:navigate>{{ __('Tareas') }}</flux:navlist.item>
                     <flux:navlist.item icon="puzzle-piece" :href="route('responsables.index')" :current="request()->routeIs('responsables.*')" wire:navigate>{{ __('Responsables') }}</flux:navlist.item>
-                    <flux:navlist.item icon="user" :href="route('clientes.index')" :current="request()->routeIs('usuarios.*')" wire:navigate>{{ __('Usuarios') }}</flux:navlist.item>
+                    <!-- <flux:navlist.item icon="user" :href="route('clientes.index')" :current="request()->routeIs('usuarios.*')" wire:navigate>{{ __('Usuarios') }}</flux:navlist.item> -->
                 </flux:navlist.group>
             </flux:navlist>
 
