@@ -25,8 +25,8 @@ class DatabaseSeeder extends Seeder
             ResponsableSeeder::class,
             ClienteSeeder::class,
             TareaSeeder::class,
-            ResponsableTareaSeeder::class,
             ClienteTareaSeeder::class,
+            ResponsableTareaSeeder::class,
         ]);
     }
 }

@@ -5,6 +5,8 @@ use Livewire\Volt\Volt;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\TareaController;
 use App\Http\Controllers\ResponsableController;
+use App\Http\Controllers\DashboardController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,9 +21,11 @@ Route::get('/', function () {
 //         ->name('login');
 // });
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+// Route::view('dashboard', 'dashboard')
+//     ->middleware(['auth', 'verified'])
+//     ->name('dashboard');
+
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource("clientes", ClienteController::class);
 Route::resource("tareas", TareaController::class);

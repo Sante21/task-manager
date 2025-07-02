@@ -24,7 +24,9 @@ class TareaFactory extends Factory
             'title' => $this->faker->sentence(4),
             'description' => $this->faker->paragraph(),
             'priority' => $this->faker->randomElement(['baja', 'media', 'alta']),
-            'tag' => $this->faker->randomElement(['web', 'redes', 'newsletter']),
+            'cliente_tarea' => $this->faker->numberBetween(1, 12),
+            'responsable_tarea' => $this->faker->numberBetween(1, 6),
+            'tag' => $this->faker->randomElement(array: ['web', 'redes', 'newsletter']),
             'status' => $this->faker->randomElement(['Sin empezar', 'Pausa', 'En progreso', 'Listo']),
             'limit_date' => $this->faker->dateTimeBetween('now', '+1 month'),
         ];
