@@ -175,6 +175,7 @@
             document.getElementById('modalFormEdit').classList.add('hidden');
         }
 
+        /* Script Drag and Drop */
         const dropArea = document.getElementById("drop-area");
         const label = document.getElementById("label");
         const fileInput = document.getElementById("image");
