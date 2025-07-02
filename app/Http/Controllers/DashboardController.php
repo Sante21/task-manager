@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Responsable;
 use App\Models\Tarea;
 use App\Models\Cliente;
 use App\Http\Requests\StoreClienteTareaRequest;
@@ -14,8 +15,9 @@ class DashboardController extends Controller
      */
     public function dashboard()
     {
-        $tasks = Tarea::all();
         $clients = Cliente::all();
-        return view('dashboard', compact('tasks', 'clients'));
+        $responsables = Responsable::all();
+        $tasks = Tarea::all();
+        return view('dashboard', compact('tasks', 'clients', 'responsables'));
     }
 }
