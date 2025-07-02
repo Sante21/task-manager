@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Responsable;
 // use App\Http\Requests\StoreResponsableRequest;
 // use App\Http\Requests\UpdateResponsableRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ResponsableController extends Controller
@@ -23,7 +24,8 @@ class ResponsableController extends Controller
      */
     public function create()
     {
-        return view('responsable.create');
+        $users = User::all();
+        return view('responsable.create', compact('users'));
     }
 
     /**
@@ -35,6 +37,7 @@ class ResponsableController extends Controller
             [
                 'name' => 'required|string|max:100',
                 'cargo' => 'required|string|max:20',
+                // 'user_id' => 'required|string|max:100',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
             ],
             [
@@ -44,18 +47,19 @@ class ResponsableController extends Controller
         );
 
         Responsable::create($valid);
-        dd('??');
+        // dd('??');
 
         $responsable = new Responsable();
 
         if ($request->hasFile('image')) {
             $imageName = pathinfo($request->image->getClientOriginalName(), PATHINFO_FILENAME) . '.' . $request->image->extension();
             $request->image->move(public_path('images/responsables'), $imageName);
-            $responsable->image = 'images/favicons/' . $imageName;
+            $responsable->image = 'images/responsables/' . $imageName;
         }
 
         $responsable->name = $valid['name'];
-        $responsable->email = $valid['cargo'];
+        $responsable->cargo = $valid['cargo'];
+        // $responsable->user_id = $valid['user_id'];
         $responsable->save();
 
 

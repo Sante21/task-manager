@@ -72,7 +72,7 @@
                 </div>
                 <button type="submit"
                     class="w-full bg-neutral-600 hover:bg-neutral-700 hover:shadow-lg text-white py-2.5 mt-4 font-medium transition-colors duration-150 ease-linear rounded-lg shadow outline-none focus:outline-none cursor-pointer">
-                    Añadir cliente
+                    Crear cliente
                 </button>
             </form>
         </div>

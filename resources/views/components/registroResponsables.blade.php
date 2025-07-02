@@ -2,12 +2,11 @@
     <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
         <div class="relative h-10 w-10">
             <img class="h-full w-full rounded-full object-cover object-center"
-                src="{{ $image }}" alt="{{$name}}"/>
+                src="{{ asset($image)}}" alt="{{$name}}"/>
             <span class="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
         </div>
         <div class="text-sm">
             <div class="font-medium text-gray-700">{{$name}}</div>
-            <div class="text-gray-400">{{$mail}}</div>
         </div>
     </th>
     <td class="px-6 py-4">
@@ -17,7 +16,6 @@
             Active
         </span>
     </td>
-    <td class="px-6 py-4 capitalize">{{$rol}}</td>
     <td class="px-6 py-4">
         <div class="flex gap-2">
             @if ($cargo == 'Web')

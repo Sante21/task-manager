@@ -38,6 +38,17 @@
                     </select>
                 </div>
 
+                <!-- <div>
+                    <label for="user_id" class="block text-sm font-medium text-gray-700 dark:text-white mb-1">Usuario</label>
+                    <select name="user_id" id="user_id" onclick="this.setAttribute('value', this.value);"
+                        class="w-full px-4 py-2 border text-gray-700 dark:text-white border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all">
+                        <option value="" selected disabled>Selecciona el usuario</option>
+                        @foreach ($users as $user)
+                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                        @endforeach
+                    </select>
+                </div> -->
+
                 <div class="w-full mb-8 mt-8" id="drop-area">
                     <label id="label"
                         class="mx-auto cursor-pointer flex w-full max-w-lg flex-col items-center justify-center rounded-xl border-2 border-dashed border-blue-500 p-6 text-center"
@@ -48,8 +59,10 @@
                                 d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                         </svg>
 
-                        <h2 class="mt-4 text-xl font-medium text-gray-700 dark:text-slate-200 tracking-wide">Foto del responsable</h2>
-                        <p class="mt-2 text-gray-500 dark:text-slate-400 tracking-wide">Sube o arrastra tu archivo PNG, JPG, JPEG o GIF.</p>
+                        <h2 class="mt-4 text-xl font-medium text-gray-700 dark:text-slate-200 tracking-wide">Foto del
+                            responsable</h2>
+                        <p class="mt-2 text-gray-500 dark:text-slate-400 tracking-wide">Sube o arrastra tu archivo PNG,
+                            JPG, JPEG o GIF.</p>
 
                         <input id="image" type="file" class="hidden" name="image"
                             accept="image/jpeg, image/png, image/jpg, image/gif" />

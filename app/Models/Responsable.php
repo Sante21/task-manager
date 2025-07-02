@@ -15,7 +15,7 @@ class Responsable extends Model
         'name',
         'cargo',
         'image',
-        'user_id',
+        // 'user_id',
     ];
 
     /*
