@@ -1,41 +1,5 @@
 <x-layouts.app>
     <!-- component -->
-    <style>
-        .-z-1 {
-            z-index: -1;
-        }
-
-        .origin-0 {
-            transform-origin: 0%;
-        }
-
-        input:focus~label,
-        input:not(:placeholder-shown)~label,
-        textarea:focus~label,
-        textarea:not(:placeholder-shown)~label,
-        select:focus~label,
-        select:not([value='']):valid~label {
-            /* @apply transform; scale-75; -translate-y-6; */
-            --tw-translate-x: 0;
-            --tw-translate-y: 0;
-            --tw-rotate: 0;
-            --tw-skew-x: 0;
-            --tw-skew-y: 0;
-            transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-            --tw-scale-x: 0.75;
-            --tw-scale-y: 0.75;
-            --tw-translate-y: -1.5rem;
-        }
-
-        input:focus~label,
-        select:focus~label {
-            /* @apply text-black; left-0; */
-            --tw-text-opacity: 1;
-            color: rgba(0, 0, 0, var(--tw-text-opacity));
-            left: 0px;
-        }
-    </style>
-
     <div class="min-h-screen flex items-center justify-center p-4">
         <div class="max-w-md w-full bg-white dark:bg-neutral-900 rounded-xl shadow-lg p-8">
 
@@ -74,6 +38,24 @@
                     </select>
                 </div>
 
+                <div class="w-full mb-8 mt-8" id="drop-area">
+                    <label id="label"
+                        class="mx-auto cursor-pointer flex w-full max-w-lg flex-col items-center justify-center rounded-xl border-2 border-dashed border-blue-500 p-6 text-center"
+                        htmlFor="image">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-600" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round"
+                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+
+                        <h2 class="mt-4 text-xl font-medium text-gray-700 dark:text-slate-200 tracking-wide">Foto del responsable</h2>
+                        <p class="mt-2 text-gray-500 dark:text-slate-400 tracking-wide">Sube o arrastra tu archivo PNG, JPG, JPEG o GIF.</p>
+
+                        <input id="image" type="file" class="hidden" name="image"
+                            accept="image/jpeg, image/png, image/jpg, image/gif" />
+                    </label>
+                </div>
+
                 <button id="button" type="submit"
                     class="w-full bg-neutral-600 hover:bg-neutral-700 hover:shadow-lg text-white py-2.5 mt-4 font-medium transition-colors duration-150 ease-linear rounded-lg shadow outline-none focus:outline-none cursor-pointer">
                     Crear Responsable
@@ -83,26 +65,43 @@
     </div>
 
     <script>
-        'use strict'
+        const dropArea = document.getElementById("drop-area");
+        const label = document.getElementById("label")
+        const fileInput = document.getElementById("image");
 
-        document.getElementById('button').addEventListener('click', toggleError)
-        const errMessages = document.querySelectorAll('#error')
+        // Prevenir comportamiento por defecto
+        dropArea.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            label.classList.add("border-solid", "bg-gray-100")
+        });
 
-        function toggleError() {
-            // Show error message
-            errMessages.forEach((el) => {
-                el.classList.toggle('hidden')
-            })
+        dropArea.addEventListener("dragleave", () => {
+            label.classList.remove("border-solid", "bg-gray-100")
+        });
 
-            // Highlight input and label with red
-            const allBorders = document.querySelectorAll('.border-gray-200')
-            const allTexts = document.querySelectorAll('.text-gray-500')
-            allBorders.forEach((el) => {
-                el.classList.toggle('border-red-600')
-            })
-            allTexts.forEach((el) => {
-                el.classList.toggle('text-red-600')
-            })
-        }
+        dropArea.addEventListener("drop", (e) => {
+            e.preventDefault();
+            label.classList.remove("border-solid", "bg-gray-100");
+
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                // Creamos un objeto FileList de manera programática para simular un cambio
+                const fileList = new DataTransfer();
+                fileList.items.add(files[0]); // Añadimos el archivo al DataTransfer
+
+                // Asignamos el nuevo FileList al input
+                fileInput.files = fileList.files;
+
+                // Opcional: para mostrar el nombre del archivo seleccionado
+                const fileName = files[0].name;
+                dropArea.querySelector("p").textContent = `Archivo seleccionado: ${fileName}`;
+            }
+        });
+
+        // Opcional: Para mostrar el nombre del archivo seleccionado
+        fileInput.addEventListener("change", () => {
+            const fileName = fileInput.files[0] ? fileInput.files[0].name : "No se ha seleccionado ningún archivo";
+            dropArea.querySelector("p").textContent = `Archivo seleccionado: ${fileName}`;
+        });
     </script>
 </x-layouts.app>
