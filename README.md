@@ -1,7 +1,7 @@
 # Task Manager
 
 ## 📌 Descripción
-Task Manager es una aplicación web desarrollada en **Laravel + Livewire + Eloquent + SQL**, diseñada para gestionar tareas dentro de una empresa. Permite asignar responsables, establecer prioridades y etiquetas, y relacionar tareas con clientes.
+Kapo es una aplicación web desarrollada en **Laravel + Livewire + Eloquent + SQL**, diseñada para gestionar tareas dentro de una empresa. Permite asignar responsables, establecer prioridades y etiquetas, y relacionar tareas con clientes.
 
 ## 🚀 Tecnologías utilizadas
 - **Backend:** Laravel, Livewire, Eloquent, SQL
